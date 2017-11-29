@@ -1,0 +1,25 @@
+{
+  "name": "larapac/valueobject",
+  "description": "Add to Eloquent casts casting to classes implemeting ValueObject",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Maksim (Ellrion) Platonov",
+      "email": "ellrion11@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "illuminate/support": "~5.0"
+  },
+  "require-dev": {
+    "mockery/mockery": "0.9.*",
+    "phpunit/phpunit": "^6.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Larapac\\": "src/"
+    }
+  }
+}
