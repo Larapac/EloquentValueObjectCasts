@@ -16,10 +16,10 @@ trait CastsValueObjectsTrait
      */
     protected function castAttribute($key, $value)
     {
-        $cast_to = $this->getCastObjectType($key);
+        $castTo = $this->getCastObjectType($key);
 
-        if (null !== $cast_to) {
-            return $cast_to::fromNative($value);
+        if (null !== $castTo) {
+            return $castTo::fromNative($value);
         }
 
         return parent::castAttribute($key, $value);
@@ -34,10 +34,10 @@ trait CastsValueObjectsTrait
      */
     public function setAttribute($key, $value)
     {
-        $cast_to = $this->getCastObjectType($key);
+        $castTo = $this->getCastObjectType($key);
 
-        if (null !== $cast_to) {
-            return $this->fromValueObject($key, $value, $cast_to);
+        if (null !== $castTo) {
+            return $this->fromValueObject($key, $value, $castTo);
         }
 
         return parent::setAttribute($key, $value);
@@ -67,9 +67,9 @@ trait CastsValueObjectsTrait
      */
     protected function getCastObjectType($key)
     {
-        $cast_to = $this->getCasts()[$key] ?? null;
+        $castTo = $this->getCasts()[$key] ?? null;
 
-        return null !== $cast_to && is_a($cast_to, ValueObject::class, true) ? $cast_to : null;
+        return null !== $castTo && is_a($castTo, ValueObject::class, true) ? $castTo : null;
     }
 
     /**
